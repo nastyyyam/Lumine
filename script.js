@@ -301,6 +301,7 @@ bookingForm.addEventListener('submit', function(e) {
             valid = false;
         }
     });
+    
     if (!valid) return;
     // Собираем данные
     const data = {};
@@ -313,7 +314,7 @@ bookingForm.addEventListener('submit', function(e) {
     formData.append('time', data.time);
     formData.append('guests', data.guests);
     formData.append('comment', data.comment);
-    fetch('https://script.google.com/macros/s/AKfycbxdxjhq6nYp-mgf95iyPxyRIuu4GkYWop4qDFVfOYqTiJsIWTulz6dcmUCMN3Y9KbUK1g/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzRwl9wyCSuGoca9EkPacVzo4JrUka7xM9zWediq_r2Ttmns5lj7KdEFJGUBogqAoEx/exec', {
         method: 'POST',
         body: formData
     })
