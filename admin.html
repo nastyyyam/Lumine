@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админка — Lumine</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f7f7f7; }
+        .admin-container { max-width: 600px; margin: 60px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 2.5rem 2.2rem; }
+        .admin-title { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+        .admin-form { display: flex; flex-direction: column; gap: 1.2rem; }
+        .admin-form input { padding: 0.8rem 1rem; font-size: 1.1rem; border: 1.5px solid #b88c5a; border-radius: 3px; background: #fff8ed; }
+        .admin-form button { padding: 0.8rem 1.5rem; font-size: 1.1rem; background: #b88c5a; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; }
+        .admin-form button:hover { background: #ffb84d; color: #222; }
+        .admin-error { color: #ff2222; font-size: 1rem; margin-bottom: 1rem; display: none; }
+        .admin-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        .admin-table th, .admin-table td { border: 1px solid #e0e0e0; padding: 0.7rem 0.5rem; text-align: left; font-size: 1.08rem; }
+        .admin-table th { background: #f5f5f5; font-weight: 700; }
+        .admin-table td { background: #fff; }
+        .admin-logout { float: right; margin-bottom: 1.5rem; background: #eee; color: #b88c5a; border: none; border-radius: 4px; padding: 0.5rem 1.2rem; cursor: pointer; font-size: 1rem; }
+        .admin-logout:hover { background: #b88c5a; color: #fff; }
+        @media (max-width: 700px) { .admin-container { padding: 1.2rem 0.5rem; } .admin-title { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-title">Админка — Бронирования Lumine</div>
+        <form class="admin-form" id="adminLoginForm">
+            <input type="text" id="adminLogin" placeholder="Логин" required autocomplete="username">
+            <input type="password" id="adminPassword" placeholder="Пароль" required autocomplete="current-password">
+            <div class="admin-error" id="adminError">Неверный логин или пароль</div>
+            <button type="submit">Войти</button>
+        </form>
+        <div id="adminPanel" style="display:none;">
+            <button class="admin-logout" id="adminLogout">Выйти</button>
+            <table class="admin-table" id="adminTable">
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Телефон</th>
+                        <th>Дата</th>
+                        <th>Время</th>
+                    </tr>
+                </thead>
+                <tbody id="adminTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html> 

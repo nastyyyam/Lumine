@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт-визитка</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__content">
+                <a href="#home" class="logo">
+                    <img src="assets/logo.svg" alt="Lumine" height="48">
+                </a>
+                <ul class="nav__list">
+                    <li><a href="#about">О кафе</a></li>
+                    <li><a href="#events">События</a></li>
+                    <li><a href="#menu">Меню</a></li>
+                    <li><a href="#gallery">Фотогалерея</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero__bg"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title">Вкус,<br>который<br>останется<br>в памяти</h1>
+            <button class="hero__btn">Забронировать столик</button>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about__container">
+            <div class="about__text">
+                <div class="about__title-line">
+                    <span class="about__line"></span>
+                    <h2>Кафе Lumine</h2>
+                    <span class="about__line"></span>
+                </div>
+                <p>Мы – уютное кафе, где каждый найдёт уголок для себя. Мы стараемся создать место, где вы можете расслабиться, провести время с близкими или просто насладиться чашечкой кофе и вкусным десертом.</p>
+                <p>Наш персонал это молодые энергичные люди они встречают гостей улыбками и хорошим настроением вдохновляют посетителей и заряжают их бодрости на весь последующий день</p>
+            </div>
+            <div class="about__carousel">
+                <div class="carousel__wrapper">
+                    <img src="assets/About/image1.png" alt="О кафе" class="carousel__image active">
+                    <img src="assets/About/image2.png" alt="О кафе" class="carousel__image">
+                    <img src="assets/About/image3.png" alt="О кафе" class="carousel__image">
+                    <button class="carousel__arrow carousel__arrow--left">&#8592;</button>
+                    <button class="carousel__arrow carousel__arrow--right">&#8594;</button>
+                </div>
+                <div class="carousel__dots">
+                    <span class="carousel__dot active"></span>
+                    <span class="carousel__dot"></span>
+                    <span class="carousel__dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events">
+        <div class="container">
+            <div class="events__title-line">
+                <span class="events__line"></span>
+                <h2>События</h2>
+                <span class="events__line"></span>
+            </div>
+            <div class="events__carousel">
+                <button class="events__arrow events__arrow--left">&#60;</button>
+                <div class="events__cards">
+                    <div class="event-card" data-event="1">
+                        <img src="assets/Events/Живая музыка.jpg" alt="Живая музыка">
+                        <div class="event-card__title">Живая музыка</div>
+                        <div class="event-card__desc">Только по пятницам и субботам</div>
+                    </div>
+                    <div class="event-card" data-event="2">
+                        <img src="assets/Events/Детское меню для самых маленьких.png" alt="Детское меню для самых маленьких">
+                        <div class="event-card__title">Детское меню для самых маленьких</div>
+                        <div class="event-card__desc">С радостью сообщаем, что в нашем кафе появилось детское меню!!</div>
+                    </div>
+                    <div class="event-card" data-event="3">
+                        <img src="assets/Events/Семейные выходные.png" alt="Семейные выходные">
+                        <div class="event-card__title">Семейные выходные</div>
+                        <div class="event-card__desc">31 мая и 1 июня семейные выходные в Lumine!</div>
+                    </div>
+                    <div class="event-card" data-event="4">
+                        <img src="assets/Events/Подарки на День Рождения.png" alt="Подарки на День Рождения">
+                        <div class="event-card__title">Подарки на День Рождения</div>
+                        <div class="event-card__desc">Наше кафе поздравляет именинников!</div>
+                    </div>
+                    <div class="event-card" data-event="5">
+                        <img src="assets/Events/Кулинарный мастер - класс.jpg" alt="Кулинарный мастер-класс">
+                        <div class="event-card__title">Кулинарный мастер-класс</div>
+                        <div class="event-card__desc">Узнайте секреты наших шеф-поваров!</div>
+                    </div>
+                </div>
+                <button class="events__arrow events__arrow--right">&#62;</button>
+            </div>
+        </div>
+        <!-- Модальное окно для подробностей события -->
+        <div class="event-modal" id="eventModal">
+            <div class="event-modal__content">
+                <div class="event-modal__miniheader">
+                    <button class="event-modal__back">&#60;</button>
+                    <span class="event-modal__minititle">События</span>
+                </div>
+                <div class="event-modal__divider"></div>
+                <img src="" alt="" class="event-modal__img">
+                <div class="event-modal__info">
+                    <h3 class="event-modal__title"></h3>
+                    <div class="event-modal__date"></div>
+                    <div class="event-modal__desc"></div>
+                    <div class="event-modal__details"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="menu__title-line">
+                <span class="menu__line"></span>
+                <h2>Меню</h2>
+                <span class="menu__line"></span>
+            </div>
+            <div class="menu__buttons">
+                <button class="menu__btn" id="mainMenuBtn">Основное меню</button>
+                <button class="menu__btn">Новинки</button>
+                <button class="menu__btn">Барное меню</button>
+            </div>
+            <div class="main-menu-panel" id="mainMenuPanel">
+                <!-- Здесь всё содержимое основного меню: выпадашка "Категории", категории, блюда -->
+                <div class="menu__dropdown">
+                    <button class="menu__dropdown-btn" id="categoryDropdownBtn">Категории <span class="menu__dropdown-arrow">&#9662;</span></button>
+                    <ul class="menu__dropdown-list" id="categoryDropdownList">
+                        <li data-target="breakfast">Завтраки</li>
+                        <li data-target="hot">Горячие блюда и салаты</li>
+                        <li data-target="croissants">Круассаны</li>
+                        <li data-target="desserts">Пирожные</li>
+                    </ul>
+                </div>
+                <div class="main-menu-categories">
+                    <h3 id="breakfast">Завтраки</h3>
+                    <!-- Здесь карточки завтраков -->
+                    <div class="menu-category-grid">
+                        <!-- Пример карточки -->
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/1.png" alt="Большой завтрак с беконом и глазуньей"><div class="menu-item__desc">Большой завтрак с беконом и глазуньей<br>Цена: 680</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/2.png" alt="Омлет с форелью"><div class="menu-item__desc">Омлет с форелью<br>Цена: 350</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/3.png" alt="Глазунья с черри"><div class="menu-item__desc">Глазунья с черри<br>Цена: 280</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/4.png" alt="Запеканка творожная"><div class="menu-item__desc">Запеканка творожная<br>Цена: 220</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/5.png" alt="Сырники с ягодами и йогуртом"><div class="menu-item__desc">Сырники с ягодами и йогуртом<br>Цена: 300</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/6.png" alt="Запеканка из рикотты с черной смородиной"><div class="menu-item__desc">Запеканка из рикотты с черной смородиной<br>Цена: 260</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/7.png" alt="Творог с ягодами"><div class="menu-item__desc">Творог с ягодами<br>Цена: 160</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/8.png" alt="Сырники с маракуей"><div class="menu-item__desc">Сырники с маракуей<br>Цена: 290</div></div>
+                        <!-- ... остальные карточки завтраков ... -->
+                    </div>
+                    <h3 id="hot">Горячие блюда и салаты</h3>
+                    <div class="menu-category-grid">
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/9.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>350г</span><br>Паста Тальятелле с бурратой<br>Цена: 480</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/10.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>300г</span><br>Паста Казаречче с лососем и шпинатом<br>Цена: 370</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/11.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>230г</span><br>Лосось на гриле с овощами в сливочном соусе<br>Цена: 740</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/12.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>180г</span><br>Драники с шампиньонами и шпинатом<br>Цена: 270</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/13.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>245г</span><br>Салат с курицей, овощами и пармезаном<br>Цена: 300</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/14.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>180г</span><br>Салат зеленый с лососем и яйцом пашот<br>Цена: 350</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/15.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>230г</span><br>Равиоли с телятиной и овощами<br>Цена: 510</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/16.png" alt=""><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>180г</span><br>Паста Тальятелле с курицей и грибами<br>Цена: 330</div></div>
+                    </div>
+                    <h3 id="croissants">Круассаны</h3>
+                    <div class="menu-category-grid">
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/17.png" alt="Круассан Цельнозерновой с моцареллой"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>140г</span><br>Круассан Цельнозерновой с моцареллой<br>Цена: 250</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/18.png" alt="Круассан Цельнозерновой с лососем"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>160г</span><br>Круассан Цельнозерновой с лососем<br>Цена: 360</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/19.png" alt="Круассан Малина-маракуйя"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>170г</span><br>Круассан Малина-маракуйя<br>Цена: 290</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/20.png" alt="Круассан с миндальным кремом"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>175г</span><br>Круассан с миндальным кремом<br>Цена: 230</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/21.png" alt="Круассан с мортаделлой и страчателлой"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>160г</span><br>Круассан с мортаделлой и страчателлой<br>Цена: 350</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/22.png" alt="Круассан Солёная карамель"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>135г</span><br>Круассан Солёная карамель<br>Цена: 230</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/23.png" alt="Круассан с сыром"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>85г</span><br>Круассан с сыром<br>Цена: 190</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/24.png" alt="Круассан Цельнозерновой"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>70г</span><br>Круассан Цельнозерновой<br>Цена: 120</div></div>
+                    </div>
+                    <h3 id="desserts">Пирожные</h3>
+                    <div class="menu-category-grid">
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/25.png" alt="Пирожное Баваруа (со сливками)"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>90г</span><br>Пирожное Баваруа (со сливками)<br>Цена: 230</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/26.png" alt="Торт Кокос-маракуйя порционный"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>135г</span><br>Торт Кокос-маракуйя порционный<br>Цена: 300</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/27.png" alt="Пирожное Корзиночка Ягодная"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>150г</span><br>Пирожное Корзиночка Ягодная<br>Цена: 350</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/28.png" alt="Пирожное Рикоттму Малина"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>85г</span><br>Пирожное Рикоттму Малина<br>Цена: 190</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/29.png" alt="Пирожное Баркетта Брусника-гречишный мёд"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>130г</span><br>Пирожное Баркетта Брусника-гречишный мёд<br>Цена: 270</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/30.png" alt="Пирожное Баркетта с голубикой"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>150г</span><br>Пирожное Баркетта с голубикой<br>Цена: 350</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/31.png" alt="Пирожное Баркетта Карамельно-Ореховая"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>115г</span><br>Пирожное Баркетта Карамельно-Ореховая<br>Цена: 290</div></div>
+                        <div class="menu-item"><img src="/assets/Menu/main_menu/32.png" alt="Пирожное Брауни"><div class="menu-item__desc"><span style='color:#888;font-size:0.95em;'>125г</span><br>Пирожное Брауни<br>Цена: 280</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="novelty-menu-panel" id="noveltyMenuPanel" style="display:none;">
+                <div class="main-menu-categories">
+                    <h3>Новинки</h3>
+                    <div class="novelty-grid">
+                        <div class="novelty-item">
+                            <div class="novelty-img-wrap">
+                                <img src="/assets/Menu/main_menu/1.png" alt="Большой завтрак с беконом и глазуньей">
+                                <span class="novelty-weight">425г</span>
+                            </div>
+                            <div class="novelty-info novelty-info--left">
+                                <div class="novelty-title">Большой завтрак<br>с беконом и глазуньей</div>
+                                <div class="novelty-price">Цена: 680</div>
+                            </div>
+                        </div>
+                        <div class="novelty-item">
+                            <div class="novelty-img-wrap">
+                                <img src="/assets/Menu/bar/1.png" alt="Коктейль Шейк манго-кокос">
+                                <span class="novelty-weight">350мл</span>
+                            </div>
+                            <div class="novelty-info novelty-info--right">
+                                <div class="novelty-title">Коктейль<br>Шейк<br>манго-кокос</div>
+                                <div class="novelty-price">Цена: 340</div>
+                            </div>
+                        </div>
+                        <div class="novelty-item">
+                            <div class="novelty-img-wrap">
+                                <img src="/assets/Menu/main_menu/29.png" alt="Пирожное Баркетта Брусника-гречишный мёд">
+                                <span class="novelty-weight">130г</span>
+                            </div>
+                            <div class="novelty-info novelty-info--left">
+                                <div class="novelty-title">Пирожное<br>Баркетта<br>Брусника-<br>гречишный мёд</div>
+                                <div class="novelty-price">Цена: 250</div>
+                            </div>
+                        </div>
+                        <div class="novelty-item">
+                            <div class="novelty-img-wrap">
+                                <img src="/assets/Menu/main_menu/9.png" alt="Паста Тальятелле с бурратой">
+                                <span class="novelty-weight">350г</span>
+                            </div>
+                            <div class="novelty-info novelty-info--right">
+                                <div class="novelty-title">Паста<br>Тальятелле<br>с бурратой</div>
+                                <div class="novelty-price">Цена: 480</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bar-menu-panel" id="barMenuPanel" style="display:none;">
+                <div class="main-menu-categories">
+                    <div class="bar-menu-title-line">
+                        <span class="bar-menu-line"></span>
+                        <h3>Барное меню</h3>
+                        <span class="bar-menu-line"></span>
+                    </div>
+                    <h4 class="bar-menu-subtitle">Напитки</h4>
+                    <div class="bar-menu-grid">
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/1.png" alt="Коктейль Шейк манго-кокос">
+                                <span class="bar-menu-weight">350мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Коктейль Шейк манго-кокос<br><span>Цена: 290</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/2.png" alt="Лимонад Кофейный с медом и апельсином">
+                                <span class="bar-menu-weight">250мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Лимонад Кофейный с медом и апельсином<br><span>Цена: 200</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/3.png" alt="Коктейль Шейк клубника-маракуйя">
+                                <span class="bar-menu-weight">350мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Коктейль Шейк клубника-маракуйя<br><span>Цена: 290</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/4.png" alt="Чай АЙС Матча Латте Синяя с клубникой">
+                                <span class="bar-menu-weight">350мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Чай АЙС Матча Латте Синяя с клубникой<br><span>Цена: 320</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/5.png" alt="Коктейль молочный с бананом">
+                                <span class="bar-menu-weight">300мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Коктейль молочный с бананом<br><span>Цена: 230</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/6.png" alt="Чай Матча Латте">
+                                <span class="bar-menu-weight">350мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Чай Матча Латте<br><span>Цена: 250</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/7.png" alt="Кофе РАФ яблоко-корица">
+                                <span class="bar-menu-weight">350мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Кофе РАФ яблоко-корица<br><span>Цена: 240</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/8.png" alt="Чай в чашке">
+                                <span class="bar-menu-weight">320мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Чай в чашке<br><span>Цена: 140</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/9.png" alt="Какао">
+                                <span class="bar-menu-weight">180мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Какао<br><span>Цена: 190</span></div>
+                        </div>
+                        <div class="bar-menu-item">
+                            <div class="bar-menu-img-wrap">
+                                <img src="/assets/Menu/bar/10.png" alt="Капучино вишня-шоколад">
+                                <span class="bar-menu-weight">350мл</span>
+                            </div>
+                            <div class="bar-menu-desc">Капучино вишня-шоколад<br><span>Цена: 260</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="gallery__title-line">
+                <span class="gallery__line"></span>
+                <h2>Фотогалерея</h2>
+                <span class="gallery__line"></span>
+            </div>
+            <div class="gallery__grid gallery__grid--fixed">
+                <img src="assets/Gallery/1.jpg" alt="Фото 1" class="gallery__img gallery__img--v">
+                <img src="assets/Gallery/2.jpg" alt="Фото 2" class="gallery__img gallery__img--v">
+                <img src="assets/Gallery/3.jpg" alt="Фото 3" class="gallery__img gallery__img--v">
+                <img src="assets/Gallery/4.png" alt="Фото 4" class="gallery__img gallery__img--v gallery__img--wide">
+                <img src="assets/Gallery/5.jpg" alt="Фото 5" class="gallery__img gallery__img--h">
+                <img src="assets/Gallery/6.jpg" alt="Фото 6" class="gallery__img gallery__img--h">
+                <img src="assets/Gallery/7.jpg" alt="Фото 7" class="gallery__img gallery__img--h">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <div class="contacts__title-line">
+                <span class="contacts__line"></span>
+                <h2>Контакты</h2>
+                <span class="contacts__line"></span>
+            </div>
+            <div class="contacts__grid">
+                <div class="contacts__item">
+                    <img src="assets/Contacts/location.svg" alt="Адрес" class="contacts__icon">
+                    <div class="contacts__label">Адрес</div>
+                    <div class="contacts__text">Самара<br>улица Фрунзе 97</div>
+                </div>
+                <div class="contacts__divider"></div>
+                <div class="contacts__item">
+                    <img src="assets/Contacts/telephone.svg" alt="Телефон" class="contacts__icon">
+                    <div class="contacts__label">Телефон</div>
+                    <div class="contacts__text contacts__text--phone">+7 (393) 010-12-21</div>
+                    <div class="contacts__links">
+                        <a href="mailto:anastasiamoiseeva506@gmail.com" class="contacts__link">anastasiamoiseeva506@gmail.com</a><br>
+                        <a href="https://t.me/bananapap0y" class="contacts__link" target="_blank">@bananapap0y</a>
+                    </div>
+                </div>
+                <div class="contacts__divider"></div>
+                <div class="contacts__item">
+                    <img src="assets/Contacts/clock.svg" alt="Режим работы" class="contacts__icon">
+                    <div class="contacts__label">Режим работы</div>
+                    <div class="contacts__text">
+                        Пн-Чм — 10:00 - 22:00<br>
+                        Пт - Сб — 10:00 - 23:00<br>
+                        Вс — 10:00 - 22:00
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__map-placeholder">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=50.091983%2C53.187872&z=16&l=map&pt=50.091983,53.187872,pm2rdm" width="100%" height="350" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно бронирования -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal__content">
+            <button class="booking-modal__close" id="bookingClose">&times;</button>
+            <div class="booking-modal__title-line">
+                <span class="booking-modal__line"></span>
+                <h2>Забронировать столик</h2>
+                <span class="booking-modal__line"></span>
+            </div>
+            <form class="booking-form" id="bookingForm" autocomplete="off">
+                <input type="text" name="name" placeholder="Введите имя" class="booking-form__input" required>
+                <div class="booking-form__error">Обязательное поле</div>
+                <input type="tel" name="phone" placeholder="Введите номер телефона" class="booking-form__input" required>
+                <div class="booking-form__error">Обязательное поле</div>
+                <label class="booking-form__label">Время брони</label>
+                <select name="time" class="booking-form__select booking-form__input" required></select>
+                <div class="booking-form__error">Обязательное поле</div>
+                <label class="booking-form__label">Дата брони</label>
+                <div class="booking-form__date-wrap">
+                    <input type="text" name="date" class="booking-form__input booking-form__input--date" placeholder="__.__.____" readonly required>
+                    <button type="button" class="booking-form__calendar-btn" id="calendarBtn">
+                        <img src="assets/Contacts/calendar.svg" alt="Календарь">
+                    </button>
+                    <div class="booking-form__calendar" id="calendarPopup"></div>
+                </div>
+                <div class="booking-form__error">Обязательное поле</div>
+                <button type="submit" class="booking-form__submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
