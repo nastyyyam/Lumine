@@ -1396,8 +1396,9 @@ body {
     white-space: nowrap;
     font-family: 'Montserrat Alternates', Arial, sans-serif;
 }
+
 .bar-menu-line {
-    flex: 1 1 40px;
+    flex: 1 1 40px; 
     height: 2px;
     background: #d3cfc7;
     min-width: 40px;
