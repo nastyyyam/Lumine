@@ -1,0 +1,14 @@
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.appendRow([
+    new Date(),
+    e.parameter.name,
+    e.parameter.phone,
+    e.parameter.date,
+    e.parameter.time,
+    e.parameter.guests,
+    e.parameter.comment
+  ]);
+  return ContentService.createTextOutput(JSON.stringify({result: "success"}))
+    .setMimeType(ContentService.MimeType.JSON);
+} 

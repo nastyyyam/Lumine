@@ -305,21 +305,33 @@ bookingForm.addEventListener('submit', function(e) {
     // Собираем данные
     const data = {};
     inputs.forEach(inp => { data[inp.name] = inp.value; });
-    // Сохраняем в localStorage
-    let bookings = JSON.parse(localStorage.getItem('lumine_bookings') || '[]');
-    bookings.push({
-        name: data.name,
-        phone: data.phone,
-        date: data.date,
-        time: data.time
+    // Отправка в Google Таблицы через form-urlencoded
+    const formData = new URLSearchParams();
+    formData.append('name', data.name);
+    formData.append('phone', data.phone);
+    formData.append('date', data.date);
+    formData.append('time', data.time);
+    formData.append('guests', data.guests);
+    formData.append('comment', data.comment);
+    fetch('https://script.google.com/macros/s/AKfycbxdxjhq6nYp-mgf95iyPxyRIuu4GkYWop4qDFVfOYqTiJsIWTulz6dcmUCMN3Y9KbUK1g/exec', {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.json())
+    .then(resp => {
+        if (resp.result === 'success') {
+            bookingModal.classList.remove('active');
+            bookingForm.reset();
+            hideCalendar();
+            clearBookingErrors();
+            alert('Спасибо! Ваша заявка отправлена.');
+        } else {
+            alert('Ошибка отправки. Попробуйте позже.');
+        }
+    })
+    .catch(() => {
+        alert('Ошибка отправки. Попробуйте позже.');
     });
-    localStorage.setItem('lumine_bookings', JSON.stringify(bookings));
-    console.log('Бронирование отправлено:', data);
-    bookingModal.classList.remove('active');
-    bookingForm.reset();
-    hideCalendar();
-    clearBookingErrors();
-    alert('Спасибо! Ваша заявка отправлена.');
 });
 
 // --- Генерация времени для select ---
